@@ -1,3 +1,9 @@
+body {
+  background-image: url("../imgs/bgImg.avif");
+  background-size: cover;
+  background-color: #d8d8d8;
+}
+
 .article-form {
   width: 100%;
   display: inline-flex;
@@ -5,22 +11,43 @@
   align-items: center;
 }
 
+form {
+  display: flex;
+  align-items: center;
+}
+
 .heading {
-  font-family: sans-serif;
-  font-size: 48px;
+  font-family: normal;
+  font-size: 54px;
+  color: #fffbf5;
+  text-shadow: -1px -3px 0 #1a120b, 3px -1px 0 #1a120b, -3px 1px 0 #1a120b,
+    1px 1px 0 #000;
+  border-bottom: 3px double black;
+  margin-bottom: 10px;
+}
+
+.warning {
+  color: #1a120b;
+  background-color: #d8d8d8;
+  margin-top: 10px;
+  padding: 7px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 19px;
 }
 
 .input {
-  padding: 12px;
-  margin-top: 12px;
-  border: 2px solid black;
+  padding: 8px;
+  border: 1px solid black;
+  width: 200px;
 }
 
 .textarea {
-  border: 2px solid black;
+  border: 1px solid black;
   width: 170px;
   height: 50px;
-  margin-top: 10px;
+  margin-top: 5px;
+  width: 200px;
 }
 
 .articles {
@@ -37,17 +64,17 @@
   margin-top: 10px;
   border-radius: 12px;
   width: 100%;
-  background-color: #d0d4ca;
+  background-color: #d8d8d8;
+  border: 1px solid #321e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .btn {
   margin: 5px 0 5px 0;
-  padding: 5px 20px;
-}
-
-.blog {
+  padding: 0px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
@@ -56,14 +83,14 @@
 }
 
 .setting-btn {
-  padding: 5px 15px;
+  padding: 0 15px;
 }
 
 .author {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  text-shadow: -1px -3px 0 #d8d8d8, 3px -1px 0 #d8d8d8, -3px 1px 0 #d8d8d8;
 }
 
 .blog-text {
@@ -75,10 +102,23 @@
 .article-input,
 .article-textarea {
   padding: 5px;
-  border: 2px solid black;
 }
 
 .article-input,
 .blog-heading {
   margin-bottom: 5px;
+}
+
+.blog-description {
+  font-family: "Edu TAS Beginner";
+}
+
+.blog-heading {
+  font-family: "Noto Serif";
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

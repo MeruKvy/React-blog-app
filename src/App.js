@@ -2,6 +2,8 @@ import "./App.css";
 import { useState } from "react";
 import Blog from "./blog";
 import { v4 as uuid } from "uuid";
+import AddCommentIcon from "@mui/icons-material/AddComment";
+import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 
 function App() {
   const [heading, setHeading] = useState("");
@@ -49,37 +51,41 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <form className="article-form">
-          <h1 className="heading">Create Article</h1>
-          <input
-            value={heading}
-            onChange={(e) => setHeading(e.target.value)}
-            className="input"
-            placeholder="Title"
-          />
-          <textarea
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="textarea"
-            placeholder="Description"
-          />
-          {errorMessage ? (
-            <p style={{ color: "red", margin: "5px" }}>
-              Please fill both inputs
-            </p>
-          ) : (
-            ""
-          )}
-          <button
-            className="btn"
-            onClick={(e) => {
-              e.preventDefault();
-              addArticle();
-            }}
-          >
-            Add article
-          </button>
-        </form>
+        <div className="menu-wrapper">
+          <form className="article-form">
+            <h1 className="heading">Create Article</h1>
+            <input
+              value={heading}
+              onChange={(e) => setHeading(e.target.value)}
+              className="input"
+              placeholder="Title"
+            />
+            <textarea
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className="textarea"
+              placeholder="Description"
+            />
+            {errorMessage ? (
+              <p className="warning">
+                {" "}
+                <ReportProblemIcon style={{ fontSize: "medium" }} /> Please fill
+                both inputs
+              </p>
+            ) : (
+              ""
+            )}
+            <button
+              className="btn"
+              onClick={(e) => {
+                e.preventDefault();
+                addArticle();
+              }}
+            >
+              <AddCommentIcon />
+            </button>
+          </form>
+        </div>
 
         <div className="articles">
           {blogList.length > 0
@@ -95,7 +101,12 @@ function App() {
         </div>
       </div>
       <div className="author">
-        <p>Coded by @Merukvy</p>
+        <p>
+          Coded by{" "}
+          <a target="blanc__" href="https://github.com/MeruKvy">
+            @Merukvy
+          </a>
+        </p>
       </div>
     </div>
   );

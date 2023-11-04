@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
+import DoneOutlineIcon from '@mui/icons-material/DoneOutline';
 
 const Blog = ({ article, onDelete, onEdit }) => {
   const [newHeading, setNewHeading] = useState(article.title);
@@ -34,9 +37,10 @@ const Blog = ({ article, onDelete, onEdit }) => {
               value={newDescription}
               onChange={(e) => setNewDescription(e.target.value)}
               placeholder="Enter new description"
+              style={{width: "400px"}}
             />
           ) : (
-            <p>{article.description}</p>
+            <p className="blog-description">{article.description}</p>
           )}
         </div>
         <div>
@@ -47,10 +51,10 @@ const Blog = ({ article, onDelete, onEdit }) => {
               handleUpdate();
             }}
           >
-            {isEditMode ? "Update" : "Edit"}
+            {isEditMode ? <DoneOutlineIcon/> : <DriveFileRenameOutlineIcon/>}
           </button>
           <button onClick={handleDelete} className="setting-btn">
-            Delete
+            <DeleteForeverIcon  />
           </button>
         </div>
       </article>
