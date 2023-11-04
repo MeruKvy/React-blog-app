@@ -1,6 +1,7 @@
 {
   "name": "blog-app-proto",
   "version": "0.1.0",
+  "homepage": "https://merukvy.github.io/React-blog-app/",
   "private": true,
   "dependencies": {
     "@emotion/styled": "^11.11.0",
